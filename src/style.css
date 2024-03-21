@@ -1,0 +1,12 @@
+@import url("https://fonts.googleapis.com/css2?family=Harmattan:wght@400;500;600;700&family=Lalezar&display=swap");
+body {
+  font-family: "Lalezar", system-ui;
+  font-weight: 200 !important;
+  font-style: normal;
+}
+span,
+a {
+  font-family: "Lalezar", system-ui;
+  font-weight: 200 !important;
+  font-style: normal;
+}
