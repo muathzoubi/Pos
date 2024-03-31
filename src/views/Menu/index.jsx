@@ -6,6 +6,14 @@ import Cart from "./components/Cart";
 import Checkout from "./components/Checkout";
 
 const Menu = () => {
+  const [showCart,setShowCart]=useState(false)
+  const [showSide,setShowSide]=useState(false)
+  const handleShowCart=()=>{
+    setShowCart(!showCart)
+  }
+  const handleShowSide=()=>{
+    setShowSide(!showSide)
+  }
   // create state search
   const [search, setSearch] = useState("");
 
@@ -16,21 +24,23 @@ const Menu = () => {
 
   return (
     <div className="min-h-screen h-screen flex flex-col bg-gray-100">
-      <NavBar search={search} onHandleSearch={handleSearch} />
+      <NavBar showcart={showCart} search={search} onHandleSearch={handleSearch} handleShowCart={handleShowCart}/>
 
-      <div className="flex-1 flex overflow-y-hidden">
-        <div className="w-9/12 flex">
-          <SideMenu />
+      <div className="min-w-screen">
+        <div className=" flex">
+        {showSide?   <SideMenu />:null}
 
           <MainMenu search={search} />
         </div>
-
-        <div className="w-3/12 flex flex-col justify-between shadow-lg bg-gray-100 px-5">
-          <Cart />
+    
+    
+      </div>
+      {showCart?  <div style={{position:'absolute',right:0,top:0,bottom:0}} className="w-6/12 flex flex-col justify-between shadow-lg bg-gray-100 px-5">
+        
+          <Cart handleShowCart={handleShowCart}/>
 
           <Checkout />
-        </div>
-      </div>
+        </div>:null}
     </div>
   );
 };

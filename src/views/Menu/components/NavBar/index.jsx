@@ -1,9 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faShoppingBasket } from "@fortawesome/free-solid-svg-icons";
 
-const navbar = ({ search, onHandleSearch }) => {
+const navbar = ({ search, onHandleSearch,handleShowCart }) => {
   // handle search with lifting state up
+  
   const handleSearch = (event) => {
     const { value } = event.target;
 
@@ -29,12 +30,11 @@ const navbar = ({ search, onHandleSearch }) => {
         </div>
       </div>
 
-      {/* right side */}
       <div className="w-3/12 flex bg-gray-100 shadow-lg px-5">
-        <span className="w-full flex justify-center items-center text-lg text-center font-semibold text-gray-700 border-b">
+        <button className="w-full flex justify-center items-center text-lg text-center font-semibold text-gray-700 border-b" onClick={()=>handleShowCart()}>
           السلة
           <FontAwesomeIcon className="text-sm mr-1" icon={faShoppingBasket} />
-        </span>
+        </button>
       </div>
     </nav>
   );

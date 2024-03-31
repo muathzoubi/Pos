@@ -1,8 +1,10 @@
 import React, { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import * as actions from "../../../../redux/actions";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faMinus } from "@fortawesome/free-solid-svg-icons";
 
-const Cart = () => {
+const Cart = ({handleShowCart}) => {
   // get date now
   const today = new Date();
 
@@ -113,6 +115,7 @@ const Cart = () => {
           رقم الطلب| {order.orders.length + 1}
         </label>
         <label className="font-medium text-gray-600">{state.date}</label>
+        <button onClick={handleShowCart}><FontAwesomeIcon icon={faMinus}/></button>
       </div>
 
       <ul>{lists}</ul>

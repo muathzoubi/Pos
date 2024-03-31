@@ -1,11 +1,11 @@
 import React from "react";
 
 const Item = ({ element, clickHandler }) => (
-  <li className="w-1/4 pb-5 px-2">
+  <li className=" pb-5 px-1 " >
     <button className="w-full focus:outline-none" onClick={clickHandler}>
       <div className="relative bg-red-500 rounded-md overflow-hidden h-48">
         <img
-          className="absolute h-full w-full object-cover"
+          className="absolutew-full object-cover"
           src={element.image}
           alt={element.title}
         />

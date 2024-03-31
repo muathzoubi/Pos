@@ -52,7 +52,7 @@ const MainMenu = ({ search }) => {
     show = <ul className="flex flex-wrap p-5 -mx-2">{lists}</ul>;
   }
 
-  return <div className="w-9/12 overflow-y-auto overflow-x-hidden">{show}</div>;
+  return <div className="w-12/12 overflow-y-auto overflow-x-hidden">{show}</div>;
 };
 
 export default MainMenu;
